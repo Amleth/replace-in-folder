@@ -3,8 +3,9 @@ import os
 import sys
 
 dir = os.path.abspath(sys.argv[1])
-dir_target = os.path.join(os.path.dirname(dir), sys.argv[1] + "_new")
-os.mkdir(dir_target)
+dir_target = os.path.normpath(os.path.join(os.path.dirname(dir), sys.argv[1] + "_new"))
+if(os.path.exists(dir_target) == False):
+  os.mkdir(dir_target)
 
 print()
 print(f"FROM {dir}")
