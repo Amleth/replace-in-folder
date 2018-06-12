@@ -28,6 +28,6 @@ for source_file in glob.glob(f"{dir}/*.xml"):
         new_line = line
         for r in replacementList:
           new_line = line.replace(r[0], r[1])
-        tf.write(f"{new_line}\n")
+        tf.write(f"{new_line}")
 
 print()
